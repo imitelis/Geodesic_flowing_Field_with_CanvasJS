@@ -76,6 +76,10 @@ class Effect {
 		this.curve = 2.2;
 		this.zoom = 0.15;
 		this.init();
+
+		window.addEventListener('resize', e => {
+			this.resize(e.target.innerWidth, e.target.innerHeight)
+		});
 	}
 
 	init(){
@@ -138,8 +142,3 @@ function animate(){
 }
 
 animate();
-
-window.addEventListener('resize',
-  function () {
-    effect.render(ctx);
-})
